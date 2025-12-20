@@ -1,35 +1,287 @@
-.app-shell{ display:flex; min-height:100vh }
-.sidebar{ width:220px; background:#3b513f; color:#fff; padding:1.6rem 1rem; box-shadow:inset -6px 0 0 rgba(0,0,0,0.05) }
-.sidebar .logo{ font-size:28px; font-weight:700; padding:1.4rem 0; text-align:center; color:#222; background:rgba(255,255,255,0.06); margin-bottom:12px }
-.nav{ padding-top:12px; display:flex; flex-direction:column; gap:8px }
-.nav-item{ padding:12px 16px; display:block; color:#fff; text-decoration:none; background:transparent; border-radius:4px }
-.nav-item.active{ background:rgba(0,0,0,0.25) }
+/* ============================================
+   DASHBOARD PAGE STYLING
+   ============================================ */
 
-.content{ flex:1; padding:2.4rem; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.02)), var(--bg) }
-.content-header{ display:flex; align-items:center; justify-content:space-between }
-.content-header h1{ margin:0; font-size:28px }
-.content-header hr{ border:0; height:2px; background: rgba(255,255,255,0.25); margin-top:0.8rem; margin-bottom:1.2rem }
-.content-body{ padding:0 }
-
-.orders{ margin-top:0.6rem }
-.order-box{ background:#fff; border-radius:4px; border:1px solid #111; padding:18px; margin-top:10px }
-.order-item{ padding:8px 0; color:#6b6b6b }
-.order-title{ margin-bottom:10px; color:#444 }
-.order-note{ font-size:14px }
-
-.dashboard-logout{
-  background:#000000;
-  color:#ffffff;
-  border:0;
-  padding:8px 12px;
-  border-radius:6px;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition: background-color .18s ease, transform .12s ease, box-shadow .12s ease;
+/* Variabel Warna */
+:root {
+  --primary-green: #355E3B;
+  --sidebar-bg: #3b513f;
+  --accent-green: #22964b;
+  --white: #ffffff;
+  --text-dark: #111827;
+  --text-light: #6b6b6b;
+  --border-color: #e5e7eb;
+  --bg-light: #fafafa;
 }
 
+/* Reset dan Setup Dasar */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background: var(--primary-green);
+  color: var(--text-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
+/* ===== MAIN LAYOUT ===== */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  color: var(--white);
+  padding: 1.6rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Logo Area */
+.sidebar .logo {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 1.2rem;
+  text-align: center;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 1.6rem;
+  transition: background 0.3s ease;
+}
+
+.sidebar .logo:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Navigation Menu */
+.nav {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Menu Item */
+.nav-item {
+  padding: 0.9rem 1rem;
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  background: transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.nav-item:hover {
+  background: rgba(0, 0, 0, 0.2);
+  padding-left: 1.2rem;
+}
+
+.nav-item.active {
+  background: rgba(34, 150, 75, 0.3);
+  color: var(--white);
+  border-left: 3px solid var(--accent-green);
+  padding-left: 0.7rem;
+}
+
+/* ===== CONTENT AREA ===== */
+.content {
+  flex: 1;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.02)), var(--primary-green);
+  overflow-y: auto;
+}
+
+/* Header */
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.content-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Content Body */
+.content-body {
+  padding: 0;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.6rem;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  margin: 0 0 1.2rem 0;
+  font-size: 20px;
+  color: var(--text-dark);
+}
+
+/* ===== ORDERS SECTION ===== */
+.orders {
+  margin-top: 0.8rem;
+}
+
+/* Order Box */
+.order-box {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.4rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.order-box:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-green);
+}
+
+/* Order Item */
+.order-item {
+  padding: 0.8rem 0;
+}
+
+.order-title {
+  margin-bottom: 0.6rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.order-note {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.btn-green {
+  background: var(--accent-green);
+}
+
+.btn-green:hover {
+  background: #1a7a38;
+  transform: translateY(-2px);
+}
+
+/* Logout Button */
+.dashboard-logout {
+  background: #555;
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-logout:hover {
+  background: #444;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: row;
+    gap: 0.4rem;
+  }
+
+  .nav-item {
+    padding: 0.6rem 1rem;
+    font-size: 14px;
+  }
+
+  .content {
+    padding: 1.6rem;
+  }
+
+  .content-header {
+    margin-bottom: 1.6rem;
+  }
+
+  .content-header h1 {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 1.4rem;
+  }
+
+  .order-box {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
 

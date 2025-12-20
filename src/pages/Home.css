@@ -1,12 +1,143 @@
-/* Home page specific styles */
-.welcome{ max-width:720px; text-align:center }
-.welcome h1{ margin:0 0 0.4rem 0; font-size:32px }
-.welcome p{ color:#6b6b6b; margin-top:0.2rem }
+/* ============================================
+   HOME PAGE STYLING
+   ============================================ */
 
-/* Ensure action buttons stack on small screens */
-@media (max-width:640px){
-	.welcome{ width:100%; padding:1.4rem }
-	.welcome-actions{ flex-direction:column }
-	.welcome-actions .btn{ width:100% }
+/* Variabel Warna */
+:root {
+  --primary-green: #355E3B;      /* Warna hijau utama */
+  --accent-green: #22964b;       /* Warna hijau terang */
+  --accent-blue: #1580ff;        /* Warna biru */
+  --white: #ffffff;
+  --text-dark: #111827;          /* Warna teks gelap */
+  --text-light: #6b6b6b;         /* Warna teks terang */
+  --shadow: 0 8px 28px rgba(10, 10, 20, 0.16);
+}
+
+/* Reset dan Setup Dasar */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primary-green);
+  color: var(--text-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Container Utama - Center Alignment */
+.center-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Card/Box Konten */
+.card {
+  width: 620px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2.4rem 2.8rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: slideUp 0.5s ease;
+}
+
+/* Animasi masuk */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Judul */
+.card h1 {
+  margin: 0 0 0.8rem 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Deskripsi */
+.card p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+/* Container Button */
+.welcome-actions {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Button Styling */
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+/* Button Biru */
+.btn-blue {
+  background: var(--accent-blue);
+}
+
+.btn-blue:hover {
+  background: #0056cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(21, 128, 255, 0.3);
+}
+
+/* Button Hijau */
+.btn-green {
+  background: var(--accent-green);
+}
+
+.btn-green:hover {
+  background: #1a7a38;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 150, 75, 0.3);
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 640px) {
+  .card {
+    width: 100%;
+    padding: 1.8rem 1.4rem;
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+
+  .welcome-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
 
