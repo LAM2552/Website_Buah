@@ -1,0 +1,12 @@
+/* Home page specific styles */
+.welcome{ max-width:720px; text-align:center }
+.welcome h1{ margin:0 0 0.4rem 0; font-size:32px }
+.welcome p{ color:#6b6b6b; margin-top:0.2rem }
+
+/* Ensure action buttons stack on small screens */
+@media (max-width:640px){
+	.welcome{ width:100%; padding:1.4rem }
+	.welcome-actions{ flex-direction:column }
+	.welcome-actions .btn{ width:100% }
+}
+
