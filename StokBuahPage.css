@@ -1,0 +1,64 @@
+.stok-buah-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.stok-buah-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stok-buah-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 15px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #333;
+}
+
+.back-arrow {
+  display: inline-block;
+  font-weight: 300;
+}
+
+.stok-buah-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.fruits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
