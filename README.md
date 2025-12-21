@@ -1,36 +1,20 @@
-# Latihan React Base
+# Daftar Pesanan — React (Vite)
 
-Proyek React dasar menggunakan Vite.
+Proyek kecil yang menampilkan daftar pesanan sesuai desain.
 
-## Perintah umum
-
-Install dependensi:
+Run locally:
 
 ```bash
 npm install
-```
-
-Jalankan dev server:
-
-```bash
 npm run dev
+# open http://localhost:5173
 ```
 
-Build produksi:
+- `Pop` menghapus item terakhir.
+- `Hapus` menghapus semua pesanan (konfirmasi). 
 
-```bash
-npm run build
-```
+Files added:
+- `index.html`
+- `package.json`
+- `src/main.jsx`, `src/App.jsx`, `src/components/OrderList.jsx`, `src/index.css`
 
-Lint dan format:
-
-```bash
-npm run lint
-npm run format
-```
-
-Jalankan test:
-
-```bash
-npm run test
-```
