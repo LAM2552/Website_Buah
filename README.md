@@ -1,36 +1,54 @@
-# Latihan React Base
+# Stok Buah - Fruit Stock Management
 
-Proyek React dasar menggunakan Vite.
+A React.js application for managing fruit inventory stock. Built with Vite and React.
 
-## Perintah umum
+## Features
 
-Install dependensi:
+- Display fruit inventory with quantities
+- Clean and responsive UI
+- Built with React 18 and Vite
+
+## Getting Started
+
+### Installation
 
 ```bash
 npm install
 ```
 
-Jalankan dev server:
+### Development
 
 ```bash
 npm run dev
 ```
 
-Build produksi:
+The application will open at `http://localhost:5173/`
+
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-Lint dan format:
+### Preview Production Build
 
 ```bash
-npm run lint
-npm run format
+npm run preview
 ```
 
-Jalankan test:
+## Project Structure
 
-```bash
-npm run test
 ```
+src/
+  ├── components/       # Reusable components
+  ├── pages/           # Page components
+  ├── styles/          # CSS files
+  ├── App.jsx          # Main App component
+  └── main.jsx         # React DOM entry point
+```
+
+## Technologies Used
+
+- React 18.2
+- Vite 5.0
+- CSS3
