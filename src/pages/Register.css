@@ -60,27 +60,10 @@ body {
   padding: 2rem;
 }
 
-/* --------------------------------------------
-   4. CARD COMPONENT
-   -------------------------------------------- */
-.card {
-  width: 100%;
-  max-width: 760px; /* Lebih lebar sesuai desain */
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2.6rem 3rem;
-  box-shadow: var(--shadow);
-  animation: slideUp 0.5s ease forwards;
-}
+/* Uses shared global styles from `src/index.css` */
 
-.card h1 {
-  margin: 0 0 1.2rem 0;
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
-  color: var(--text-dark);
-}
-
+.card{width:100%;max-width:760px;padding:2.6rem 3rem}
+.card h1{font-size:30px;margin-bottom:1.2rem;text-align:center}
 /* FORM WRAPPER (GRID: label | input) */
 .form-grid {
   display: grid;
