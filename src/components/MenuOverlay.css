@@ -1,0 +1,48 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(79,116,96,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+.menu-panel {
+  background: #9fb19f;
+  padding: 36px 28px;
+  border-radius: 10px;
+  max-width: 900px;
+  width: 92%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+.menu-title {
+  display: inline-block;
+  background: #3b513f;
+  color: #fff;
+  padding: 8px 26px;
+  border-radius: 4px;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.menu-buttons{
+  display:flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.menu-large-button{
+  background: #3b513f;
+  color: #fff;
+  padding: 18px 28px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+  border: 3px solid #2e3d31;
+  min-width: 180px;
+  font-weight: 600;
+}
+.menu-large-button:hover{ transform: translateY(-3px); }
+.menu-close{ position:absolute; right:10px; top:8px; background:none; border:0; font-size:24px; color:#2e3d31; cursor:pointer }
