@@ -8,7 +8,7 @@ import SuccessNotification from '../components/SuccessNotification'
 import './Belanja.css'
 
 export default function Belanja() {
-    const { items: fruits } = useFruitQueue()
+    const { items: fruits, update: updateFruit } = useFruitQueue()
     const { enqueue: addOrder } = useOrderQueue()
     const { addToCart } = useShopping()
 
@@ -31,6 +31,10 @@ export default function Belanja() {
 
     function handleConfirmPurchase(quantity) {
         if (!selectedFruit) return
+
+        // Reduce stock from FruitQueue
+        const newStock = selectedFruit.stock - quantity
+        updateFruit(selectedFruit.id, { stock: Math.max(0, newStock) })
 
         // Add to cart using Double Linked List
         const cartItem = addToCart(selectedFruit, quantity)

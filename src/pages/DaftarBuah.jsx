@@ -3,20 +3,20 @@ import DefaultLayout from '../layouts/DefaultLayout'
 import { useFruitQueue } from '../context/FruitQueueContext'
 import './DaftarBuah.css'
 
-export default function DaftarBuah(){
+export default function DaftarBuah() {
   const { items, enqueue, remove, update } = useFruitQueue()
   const [name, setName] = useState('')
   const [stock, setStock] = useState('')
   const [price, setPrice] = useState('')
   const nameRef = React.useRef(null)
 
-  function handleAdd(e){
+  function handleAdd(e) {
     e.preventDefault()
-    if(!name.trim()) return
+    if (!name.trim()) return
     const s = Number(stock)
     const p = Number(price)
-    if(Number.isNaN(s) || s < 0) return
-    if(Number.isNaN(p) || p < 0) return
+    if (Number.isNaN(s) || s < 0) return
+    if (Number.isNaN(p) || p < 0) return
 
     enqueue({ name: name.trim(), stock: s, price: p })
     setName(''); setStock(''); setPrice('')
@@ -59,8 +59,8 @@ export default function DaftarBuah(){
                   <td>{i.stock}</td>
                   <td>Rp {i.price}</td>
                   <td>
-                    <button className="btn btn-small" onClick={() => remove(i.id)}>Hapus</button>
-                    <button className="btn btn-small" onClick={() => update(i.id, { stock: i.stock + 1 })} style={{ marginLeft:8 }}>Tambah Stok</button>
+                    <button className="btn btn-small btn-danger" onClick={() => remove(i.id)}>Hapus</button>
+                    <button className="btn btn-small btn-blue" onClick={() => update(i.id, { stock: i.stock + 1 })} style={{ marginLeft: 8 }}>Tambah Stok</button>
                   </td>
                 </tr>
               ))}
