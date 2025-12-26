@@ -5,7 +5,18 @@ const STORAGE_KEY = 'order_queue_v1'
 
 export function OrderQueueProvider({ children }){
   const [items, setItems] = useState(() => {
-    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]') } catch(e){ return [] }
+    try{
+      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+      if((!data || data.length === 0) && (import.meta.env && import.meta.env.DEV)){
+        const seed = [
+          { id: 'o1', customer: 'Budi', note: '1 kg Apel', status: 'pending' },
+          { id: 'o2', customer: 'Ani', note: '2 kg Pisang', status: 'pending' }
+        ]
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(seed))
+        return seed
+      }
+      return data
+    } catch(e){ return [] }
   })
 
   useEffect(() => {

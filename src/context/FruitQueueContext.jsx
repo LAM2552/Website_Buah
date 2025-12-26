@@ -5,7 +5,19 @@ const STORAGE_KEY = 'fruit_queue_v1'
 
 export function FruitQueueProvider({ children }){
   const [items, setItems] = useState(() => {
-    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]') } catch(e){ return [] }
+    try{
+      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+      if((!data || data.length === 0) && (import.meta.env && import.meta.env.DEV)){
+        const seed = [
+          { id: 's1', name: 'Apel', stock: 12, price: 5000 },
+          { id: 's2', name: 'Pisang', stock: 20, price: 3000 },
+          { id: 's3', name: 'Mangga', stock: 8, price: 8000 }
+        ]
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(seed))
+        return seed
+      }
+      return data
+    } catch(e){ return [] }
   })
 
   useEffect(() => {
