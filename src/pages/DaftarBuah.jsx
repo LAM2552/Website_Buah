@@ -6,14 +6,22 @@ import './DaftarBuah.css'
 export default function DaftarBuah(){
   const { items, enqueue, remove, update } = useFruitQueue()
   const [name, setName] = useState('')
-  const [stock, setStock] = useState(0)
-  const [price, setPrice] = useState(0)
+  const [stock, setStock] = useState('')
+  const [price, setPrice] = useState('')
+  const nameRef = React.useRef(null)
 
   function handleAdd(e){
     e.preventDefault()
-    if(!name) return
-    enqueue({ name, stock: Number(stock), price: Number(price) })
-    setName(''); setStock(0); setPrice(0)
+    if(!name.trim()) return
+    const s = Number(stock)
+    const p = Number(price)
+    if(Number.isNaN(s) || s < 0) return
+    if(Number.isNaN(p) || p < 0) return
+
+    enqueue({ name: name.trim(), stock: s, price: p })
+    setName(''); setStock(''); setPrice('')
+    // focus back to name input for quick entry
+    setTimeout(() => nameRef.current && nameRef.current.focus(), 30)
   }
 
   return (
@@ -22,7 +30,7 @@ export default function DaftarBuah(){
         <h3>Tambah Buah</h3>
         <form className="form-grid" onSubmit={handleAdd}>
           <label>Nama Buah</label>
-          <input value={name} onChange={e => setName(e.target.value)} placeholder="Contoh: Apel" />
+          <input ref={nameRef} value={name} onChange={e => setName(e.target.value)} placeholder="Contoh: Apel" />
 
           <label>Stok</label>
           <input type="number" value={stock} onChange={e => setStock(e.target.value)} />

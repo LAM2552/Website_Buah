@@ -45,6 +45,7 @@ export default function DaftarPesanan(){
                   <button className="btn btn-small" onClick={() => update(o.id, { status: 'cancelled' })}>Batal</button>
                   <button className="btn btn-small" style={{ marginLeft: 8 }} onClick={() => update(o.id, { status: 'processing' })}>Proses</button>
                   <button className="btn btn-small" style={{ marginLeft: 8 }} onClick={() => processNext()}>Selesaikan & Next</button>
+                  <button className="btn btn-small" style={{ marginLeft: 8 }} onClick={() => remove(o.id)}>Hapus</button>
                 </div>
               </div>
             ))}
