@@ -1,48 +1,60 @@
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(79,116,96,0.65);
+  background: rgba(0,0,0,0.45); /* darker overlay for better contrast */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1200;
+  padding: 24px;
 }
 .menu-panel {
-  background: #9fb19f;
-  padding: 36px 28px;
-  border-radius: 10px;
-  max-width: 900px;
-  width: 92%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: #e9f3ea; /* light green panel */
+  padding: 28px 32px;
+  border-radius: 12px;
+  max-width: 760px;
+  width: 100%;
+  box-shadow: 0 18px 40px rgba(10,10,20,0.18);
   text-align: center;
   position: relative;
+  transform: translateY(-6px);
 }
 .menu-title {
   display: inline-block;
-  background: #3b513f;
+  background: var(--sidebar-bg);
   color: #fff;
-  padding: 8px 26px;
-  border-radius: 4px;
+  padding: 10px 32px;
+  border-radius: 6px;
   font-size: 22px;
-  margin-bottom: 18px;
+  font-weight: 700;
+  margin-bottom: 22px;
 }
 .menu-buttons{
   display:flex;
-  gap: 24px;
+  gap: 28px;
   justify-content: center;
-  margin-top: 14px;
+  margin-top: 18px;
   flex-wrap: wrap;
 }
 .menu-large-button{
-  background: #3b513f;
+  background: var(--accent-green);
   color: #fff;
-  padding: 18px 28px;
+  padding: 18px 36px;
   text-decoration: none;
   display: inline-block;
-  border-radius: 6px;
-  border: 3px solid #2e3d31;
-  min-width: 180px;
-  font-weight: 600;
+  border-radius: 8px;
+  border: 3px solid rgba(0,0,0,0.12);
+  min-width: 220px;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
-.menu-large-button:hover{ transform: translateY(-3px); }
-.menu-close{ position:absolute; right:10px; top:8px; background:none; border:0; font-size:24px; color:#2e3d31; cursor:pointer }
+.menu-large-button:hover{ transform: translateY(-4px); box-shadow: 0 10px 30px rgba(10,10,20,0.12) }
+.menu-close{ position:absolute; right:10px; top:8px; background:none; border:0; font-size:22px; color:#2e3d31; cursor:pointer }
+
+@media (max-width:640px){
+  .menu-panel{ padding: 20px; }
+  .menu-large-button{ min-width: 160px; padding: 14px 20px; font-size:15px }
+  .menu-title{ font-size:18px; padding:8px 20px }
+}
