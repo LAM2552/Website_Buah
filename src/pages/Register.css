@@ -2,52 +2,11 @@
    REGISTER PAGE STYLING
    ============================================ */
 
-/* --------------------------------------------
-   1. VARIABLES
-   -------------------------------------------- */
-:root {
-  /* Colors */
-  --primary-green: #355E3B;
-  --accent-green: #22964b;
-  --accent-green-hover: #1a7a38;
-  --accent-blue: #1580ff;
-  --white: #ffffff;
-  --bg-input: #fafafa;
-  
-  /* Text Colors */
-  --text-dark: #111827;
-  --text-light: #6b6b6b;
-  --border-color: #e5e7eb;
-  
-  /* Effects */
-  --shadow: 0 8px 28px rgba(10, 10, 20, 0.16);
-  --shadow-hover: 0 6px 20px rgba(34, 150, 75, 0.3);
-  --focus-ring: 0 0 0 4px rgba(34, 150, 75, 0.1);
-  --radius-md: 8px;
-  --radius-lg: 12px;
-}
+/* Page-specific variables and resets moved to `src/index.css` */
 
-/* --------------------------------------------
-   2. RESET & BASE STYLES
-   -------------------------------------------- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*,*::before,*::after{box-sizing:border-box}
 
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--primary-green);
-  color: var(--text-dark);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
+body{background:var(--primary-green);-webkit-font-smoothing:antialiased}
 
 /* --------------------------------------------
    3. LAYOUT & CONTAINER
@@ -122,40 +81,7 @@ body {
 /* --------------------------------------------
    5. FORM ELEMENTS
    -------------------------------------------- */
-.form-group {
-  margin-bottom: 1.4rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.6rem;
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--text-dark);
-}
-
-.form-group input {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  background: var(--bg-input);
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
-  font-size: 15px;
-  font-family: inherit;
-  transition: all 0.3s ease;
-}
-
-.form-group input::placeholder {
-  color: var(--text-light);
-}
-
-/* States: Focus */
-.form-group input:focus {
-  outline: none;
-  border-color: var(--accent-green);
-  background: var(--white);
-  box-shadow: var(--focus-ring);
-}
+/* Page uses `.form-grid` for layout; inputs use base browser styles with focus state handled globally. */
 
 /* --------------------------------------------
    6. BUTTONS
@@ -246,18 +172,10 @@ body {
     margin-bottom: 1.2rem;
   }
 
-  .form-row {
-    display: block;
-  }
+  /* Mobile fallback: form layout handled by `.form-grid` */
+  .form-grid .form-actions { grid-column: 1 / -1; }
 
-  .form-row label {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.2rem;
-  }
+  .btn { padding: 0.8rem 1.4rem; }
 
   .btn {
     padding: 0.8rem 1.4rem;

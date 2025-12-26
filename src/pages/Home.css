@@ -2,31 +2,9 @@
    HOME PAGE STYLING
    ============================================ */
 
-/* Variabel Warna */
-:root {
-  --primary-green: #355E3B;      /* Warna hijau utama */
-  --accent-green: #22964b;       /* Warna hijau terang */
-  --accent-blue: #1580ff;        /* Warna biru */
-  --white: #ffffff;
-  --text-dark: #111827;          /* Warna teks gelap */
-  --text-light: #6b6b6b;         /* Warna teks terang */
-  --shadow: 0 8px 28px rgba(10, 10, 20, 0.16);
-}
-
-/* Reset dan Setup Dasar */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--primary-green);
-  color: var(--text-dark);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
+/* Page-specific vars & tweaks removed — uses shared vars in `src/index.css` */
+/* Body and base resets are handled globally in `src/index.css` */
+body{background:var(--primary-green)}
 
 /* This page uses shared global styles from `src/index.css` */
 

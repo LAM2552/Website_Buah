@@ -2,30 +2,10 @@
    DASHBOARD PAGE STYLING
    ============================================ */
 
-/* Variabel Warna */
-:root {
-  --primary-green: #355E3B;
-  --sidebar-bg: #3b513f;
-  --accent-green: #22964b;
-  --white: #ffffff;
-  --text-dark: #111827;
-  --text-light: #6b6b6b;
-  --border-color: #e5e7eb;
-  --bg-light: #fafafa;
-}
+/* Page-specific variables moved to `src/index.css` */
 
-/* Reset dan Setup Dasar */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--primary-green);
-  color: var(--text-dark);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
+/* Body base is handled globally in `src/index.css` */
+body{background:var(--primary-green)}
 
 /* ===== MAIN LAYOUT ===== */
 .app-shell {

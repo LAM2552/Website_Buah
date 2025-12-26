@@ -2,107 +2,23 @@
    LOGIN PAGE STYLING
    ============================================ */
 
-/* Variabel Warna */
-:root {
-  --primary-green: #355E3B;
-  --accent-green: #22964b;
-  --accent-blue: #1580ff;
-  --white: #ffffff;
-  --text-dark: #111827;
-  --text-light: #6b6b6b;
-  --border-color: #e5e7eb;
-  --shadow: 0 8px 28px rgba(10, 10, 20, 0.16);
-  --shadow-sm: 0 2px 8px rgba(10, 10, 20, 0.08);
-}
-
-/* Reset dan Setup Dasar */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: var(--primary-green);
-  color: var(--text-dark);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
+/* Page-specific vars removed — using `src/index.css` globals */
+body{background:var(--primary-green)}
 
 /* Uses shared global styles from `src/index.css` */
 
 /* Page-specific tweaks */
 .card{width:760px;max-width:calc(100% - 48px);padding:2.6rem 3rem}
 .card h1{font-size:30px;margin-bottom:1.2rem;text-align:center}
-/* Form: stacked (username above password) */
-.form {
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.form-row {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.form-row label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-.form-row input {
-  width: 100%;
-  padding: 0.95rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: #fff;
-  font-size: 15px;
-  transition: box-shadow .2s ease, border-color .2s ease;
-}
-
-.form-row input:focus {
-  outline: none;
-  border-color: var(--accent-green);
-  box-shadow: 0 0 0 6px rgba(34, 150, 75, 0.06);
-} 
+/* Form layout and actions - keep only used rules */
+.form { max-width: 520px; margin: 0 auto; }
 
 /* Actions */
-.form-actions {
-  margin-top: 1.4rem;
-}
+.form-actions { margin-top: 1.4rem; }
 
-.form-actions .btn {
-  width: 100%;
-  padding: 0.95rem 1.2rem;
-  border-radius: 8px;
-  background: var(--accent-green);
-  color: var(--white);
-  border: none;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
+.form-actions .btn { width: 100%; padding: 0.95rem 1.2rem; border-radius: 8px; background: var(--accent-green); color: var(--white); border: none; font-weight: 700; font-size: 15px; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
 
-.form-actions .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(34, 150, 75, 0.12);
-}
-
-.form-footer {
-  text-align: center;
-  margin-top: 1.4rem;
-  font-size: 14px;
-  color: var(--text-light);
-}
-
-.form-footer a {
-  color: var(--accent-blue);
-  text-decoration: underline;
-}
+.form-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(34, 150, 75, 0.12); }
 
 .form-error {
   margin-bottom: 1rem;
@@ -115,8 +31,7 @@ body {
 /* Mobile */
 @media (max-width: 640px) {
   .card { width: 100%; padding: 1.6rem; }
-  .form-row { display: block; }
-  .form-row label { width: 100%; margin-bottom: 0.45rem; }
+  /* Mobile fallback: form layout handled by `.form-grid` */
   .form { padding: 0 6px; }
   .form-actions .btn { width: 100%; }
 }

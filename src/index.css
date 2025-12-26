@@ -2,12 +2,20 @@
 :root{
   --primary-green: #355E3B;
   --accent-green: #22964b;
+  --accent-green-hover: #1a7a38;
   --accent-blue: #1580ff;
   --white: #ffffff;
   --text-dark: #111827;
   --text-light: #6b6b6b;
   --border-color: #e5e7eb;
+  --bg-input: #fafafa;
   --shadow: 0 8px 28px rgba(10,10,20,0.16);
+  --shadow-sm: 0 2px 8px rgba(10,10,20,0.08);
+  --focus-ring: 0 0 0 4px rgba(34,150,75,0.06);
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --sidebar-bg: #3b513f;
+  --bg-light: #fafafa;
 }
 
 /* Reset & base */
