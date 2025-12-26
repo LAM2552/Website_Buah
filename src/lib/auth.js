@@ -28,7 +28,18 @@ export function setCurrentUser(user){
 }
 
 export function getCurrentUser(){
-  try{ return JSON.parse(localStorage.getItem(AUTH_KEY) || 'null') }catch(e){return null}
+  try{
+    const val = JSON.parse(localStorage.getItem(AUTH_KEY) || 'null')
+    if(!val && (import.meta.env && import.meta.env.DEV)){
+      // In development mode, provide a default dev user for easier QA
+      const dev = { username: 'dev' }
+      localStorage.setItem(AUTH_KEY, JSON.stringify(dev))
+      return dev
+    }
+    return val
+  }catch(e){
+    return null
+  }
 }
 
 export function logout(){
@@ -39,3 +50,4 @@ export function logout(){
 export function isAuthenticated(){
   return !!getCurrentUser()
 }
+

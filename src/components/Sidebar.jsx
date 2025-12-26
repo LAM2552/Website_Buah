@@ -10,6 +10,14 @@ export default function Sidebar() {
   const [menuOpen, setMenuOpen] = useState({})
   const [overlayOpen, setOverlayOpen] = useState(false)
 
+  // Auto-open menu overlay if URL contains ?menu=1 (developer helper)
+  React.useEffect(() => {
+    try{
+      const p = new URLSearchParams(window.location.search)
+      if(p.get('menu') === '1') setOverlayOpen(true)
+    }catch(e){}
+  }, [])
+
   function handleLogout(){
     logout()
     nav('/')
