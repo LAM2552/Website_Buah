@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard'
 import StokBuah from './pages/StokBuah'
 import DaftarBuah from './pages/DaftarBuah'
 import DaftarPesanan from './pages/DaftarPesanan'
+import DevLogin from './pages/DevLogin'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/daftar-buah" element={<DaftarBuah />} />
         <Route path="/stok-buah" element={<StokBuah />} />
         <Route path="/daftar-pesanan" element={<DaftarPesanan />} />
+        {import.meta.env.DEV && <Route path="/__dev_login" element={<DevLogin />} />}
       </Routes>
     </BrowserRouter>
   )
