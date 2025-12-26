@@ -3,7 +3,6 @@
    ============================================ */
 
 /* Page-specific vars removed — using `src/index.css` globals */
-body{background:var(--primary-green)}
 
 /* Uses shared global styles from `src/index.css` */
 

@@ -5,7 +5,6 @@
 /* Page-specific variables moved to `src/index.css` */
 
 /* Body base is handled globally in `src/index.css` */
-body{background:var(--primary-green)}
 
 /* ===== MAIN LAYOUT ===== */
 .app-shell {
@@ -47,6 +46,8 @@ body{background:var(--primary-green)}
   flex-direction: column;
   gap: 0.6rem;
 }
+
+/* Sidebar component subitem and button styles moved to `src/index.css` for global use */
 
 /* Menu Item */
 .nav-item {

@@ -6,8 +6,6 @@
 
 *,*::before,*::after{box-sizing:border-box}
 
-body{background:var(--primary-green);-webkit-font-smoothing:antialiased}
-
 /* --------------------------------------------
    3. LAYOUT & CONTAINER
    -------------------------------------------- */
@@ -23,37 +21,7 @@ body{background:var(--primary-green);-webkit-font-smoothing:antialiased}
 
 .card{width:100%;max-width:760px;padding:2.6rem 3rem}
 .card h1{font-size:30px;margin-bottom:1.2rem;text-align:center}
-/* FORM WRAPPER (GRID: label | input) */
-.form-grid {
-  display: grid;
-  grid-template-columns: 180px 1fr; /* label column + input column */
-  column-gap: 24px;
-  row-gap: 14px;
-  align-items: center;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.form-grid label {
-  justify-self: end; /* align labels close to inputs */
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-.form-grid input {
-  width: 100%;
-  padding: 0.95rem 1rem;
-  background: var(--bg-input);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  font-size: 15px;
-  transition: box-shadow .18s ease, border-color .18s ease;
-}
-
-.form-grid input:focus {
-  border-color: var(--accent-green);
-  box-shadow: var(--focus-ring);
-}
+/* FORM WRAPPER moved to global styles in `src/index.css` to ensure consistent form layout across pages */
 
 /* Make submit button occupy input column */
 .form-grid .form-actions {
@@ -61,22 +29,10 @@ body{background:var(--primary-green);-webkit-font-smoothing:antialiased}
   margin-top: 0.6rem;
 }
 
-/* Fallback stacked layout on small screens */
+/* Fallback stacked layout on small screens (kept here to allow page-specific overrides) */
 @media (max-width: 640px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-  }
-
-  .form-grid label {
-    justify-self: start;
-    margin-bottom: 0.35rem;
-  }
-
-  .form-grid .form-actions {
-    grid-column: 1 / -1;
-  }
-}
+  .form-grid .form-actions { grid-column: 1 / -1; }
+} 
 
 /* --------------------------------------------
    5. FORM ELEMENTS

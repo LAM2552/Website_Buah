@@ -4,7 +4,6 @@
 
 /* Page-specific vars & tweaks removed — uses shared vars in `src/index.css` */
 /* Body and base resets are handled globally in `src/index.css` */
-body{background:var(--primary-green)}
 
 /* This page uses shared global styles from `src/index.css` */
 
