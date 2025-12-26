@@ -1,0 +1,4 @@
+/* Simple Stok Buah styles */
+.stock-list table{width:100%;border-collapse:collapse}
+.stock-list th, .stock-list td{padding:12px;border-bottom:1px solid #eee;text-align:left}
+.stock-list em{color:#6b6b6b}
