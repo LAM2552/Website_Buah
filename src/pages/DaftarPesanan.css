@@ -1,5 +1,4 @@
 /* Daftar Pesanan styles */
-.order-box{background:var(--white);border:1px solid var(--border-color);border-radius:8px;padding:1rem;margin-top:1rem}
 .order-item{padding:.8rem 0;border-bottom:1px dashed #eee}
 .order-title{font-weight:700}
 .order-note{color:var(--text-light)}

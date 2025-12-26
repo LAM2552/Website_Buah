@@ -4,8 +4,6 @@
 
 /* Page-specific variables and resets moved to `src/index.css` */
 
-*,*::before,*::after{box-sizing:border-box}
-
 /* --------------------------------------------
    3. LAYOUT & CONTAINER
    -------------------------------------------- */
@@ -21,6 +19,7 @@
 
 .card{width:100%;max-width:760px;padding:2.6rem 3rem}
 .card h1{font-size:30px;margin-bottom:1.2rem;text-align:center}
+
 /* FORM WRAPPER moved to global styles in `src/index.css` to ensure consistent form layout across pages */
 
 /* Make submit button occupy input column */
@@ -30,13 +29,14 @@
 }
 
 /* Fallback stacked layout on small screens (kept here to allow page-specific overrides) */
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .form-grid .form-actions { grid-column: 1 / -1; }
 } 
 
 /* --------------------------------------------
    5. FORM ELEMENTS
    -------------------------------------------- */
+
 /* Page uses `.form-grid` for layout; inputs use base browser styles with focus state handled globally. */
 
 /* --------------------------------------------
@@ -77,7 +77,7 @@
 .btn-green:hover {
   background: var(--accent-green-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow);
 }
 
 .btn-green:active {
@@ -100,21 +100,11 @@
 /* --------------------------------------------
    8. ANIMATIONS
    -------------------------------------------- */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* --------------------------------------------
    9. MEDIA QUERIES (Mobile)
    -------------------------------------------- */
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .center-wrap {
     padding: 1rem;
   }
@@ -132,8 +122,4 @@
   .form-grid .form-actions { grid-column: 1 / -1; }
 
   .btn { padding: 0.8rem 1.4rem; }
-
-  .btn {
-    padding: 0.8rem 1.4rem;
-  }
 }

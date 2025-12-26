@@ -3,6 +3,7 @@
    ============================================ */
 
 /* Page-specific vars & tweaks removed — uses shared vars in `src/index.css` */
+
 /* Body and base resets are handled globally in `src/index.css` */
 
 /* This page uses shared global styles from `src/index.css` */
@@ -12,4 +13,4 @@
 .card h1{font-size:32px;font-weight:700;margin-bottom:.8rem}
 .welcome-actions{display:flex;gap:1.2rem;margin-top:2rem;justify-content:center}
 
-@media (max-width:640px){.card{width:100%;padding:1.8rem 1.4rem}.card h1{font-size:24px}.welcome-actions{flex-direction:column;gap:.8rem}}
+@media (width <=640px){.card{width:100%;padding:1.8rem 1.4rem}.card h1{font-size:24px}.welcome-actions{flex-direction:column;gap:.8rem}}

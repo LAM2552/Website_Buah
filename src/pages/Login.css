@@ -9,6 +9,7 @@
 /* Page-specific tweaks */
 .card{width:760px;max-width:calc(100% - 48px);padding:2.6rem 3rem}
 .card h1{font-size:30px;margin-bottom:1.2rem;text-align:center}
+
 /* Form layout and actions - keep only used rules */
 .form { max-width: 520px; margin: 0 auto; }
 
@@ -17,7 +18,7 @@
 
 .form-actions .btn { width: 100%; padding: 0.95rem 1.2rem; border-radius: 8px; background: var(--accent-green); color: var(--white); border: none; font-weight: 700; font-size: 15px; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
 
-.form-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(34, 150, 75, 0.12); }
+.form-actions .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgb(34 150 75 / 12%); }
 
 .form-error {
   margin-bottom: 1rem;
@@ -28,8 +29,9 @@
 }
 
 /* Mobile */
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .card { width: 100%; padding: 1.6rem; }
+
   /* Mobile fallback: form layout handled by `.form-grid` */
   .form { padding: 0 6px; }
   .form-actions .btn { width: 100%; }
