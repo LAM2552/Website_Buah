@@ -1,5 +1,59 @@
 /* Daftar Pesanan styles */
-.order-item{padding:.8rem 0;border-bottom:1px dashed #eee}
-.order-title{font-weight:700}
-.order-note{color:var(--text-light)}
-.btn-small{padding:.45rem .75rem;font-size:13px;border-radius:6px}
+.orders {
+    margin-top: .8rem
+}
+
+.order-box {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem
+}
+
+.order-item {
+    padding: .6rem 0;
+    border-bottom: 1px solid #eee
+}
+
+.order-item:last-child {
+    border-bottom: none
+}
+
+.order-title {
+    font-weight: 600
+}
+
+.order-note {
+    font-size: 14px;
+    color: #666
+}
+
+.info-text {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.order-subtotal {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    color: #333;
+}
+
+.order-subtotal strong {
+    color: var(--accent-green);
+}
+
+.btn-danger {
+    background: #dc3545;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.btn-small {
+    padding: .45rem .75rem;
+    font-size: 13px;
+    border-radius: 6px
+}

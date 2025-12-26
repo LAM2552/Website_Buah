@@ -3,10 +3,10 @@ import Sidebar from '../components/Sidebar'
 import { getCurrentUser, logout } from '../lib/auth'
 import { useNavigate } from 'react-router-dom'
 
-export default function DefaultLayout({ children, title = 'Dashboard' }){
+export default function DefaultLayout({ children, title = 'Dashboard' }) {
   const user = getCurrentUser()
   const nav = useNavigate()
-  function handleLogout(){
+  function handleLogout() {
     logout()
     nav('/')
   }
@@ -21,7 +21,7 @@ export default function DefaultLayout({ children, title = 'Dashboard' }){
             <hr style={{ flex: 1 }} />
           </div>
           <div>
-            {user && title !== 'Dashboard' && <button className="dashboard-logout" onClick={handleLogout}>Logout</button>}
+            {user && <button className="dashboard-logout" onClick={handleLogout}>Logout</button>}
           </div>
         </div>
         <div className="content-body">{children}</div>

@@ -1,0 +1,132 @@
+.confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.confirm-modal {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.confirm-modal h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.confirm-modal .subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.confirm-modal .quantity-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.confirm-modal .quantity-row label {
+    font-weight: 500;
+    color: #444;
+}
+
+.confirm-modal .quantity-input {
+    width: 70px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.confirm-modal .quantity-row span {
+    color: #666;
+}
+
+.confirm-modal .subtotal {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.confirm-modal .subtotal strong {
+    color: #111;
+}
+
+.confirm-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.confirm-buttons .btn-confirm {
+    flex: 1;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.confirm-buttons .btn-yes {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.confirm-buttons .btn-yes:hover {
+    background: #43A047;
+    transform: translateY(-2px);
+}
+
+.confirm-buttons .btn-no {
+    background: #E53935;
+    color: #fff;
+}
+
+.confirm-buttons .btn-no:hover {
+    background: #D32F2F;
+    transform: translateY(-2px);
+}

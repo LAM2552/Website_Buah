@@ -1,66 +1,9 @@
 /* ============================================
    DASHBOARD PAGE STYLING
+   Only page-specific styles, global styles in index.css
    ============================================ */
 
-/* Page-specific variables moved to `src/index.css` */
-
-/* Body base is handled globally in `src/index.css` */
-
-/* ===== SIDEBAR ===== */
-.sidebar {
-  width: 250px;
-  background: var(--sidebar-bg);
-  color: var(--white);
-  padding: 1.6rem 1rem;
-  box-shadow: 2px 0 8px rgb(0 0 0 / 10%);
-  overflow-y: auto;
-}
-
-/* Logo Area */
-.sidebar .logo {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 1.2rem;
-  text-align: center;
-  color: var(--text-dark);
-  background: rgb(255 255 255 / 8%);
-  border-radius: 8px;
-  margin-bottom: 1.6rem;
-  transition: background 0.5s ease;
-}
-
-.sidebar .logo:hover {
-  background: rgb(255 255 255 / 12%);
-}
-
-/* Sidebar component subitem and button styles moved to `src/index.css` for global use */
-
-/* Menu Item */
-.nav-item {
-  padding: 0.9rem 1rem;
-  display: block;
-  color: var(--white);
-  text-decoration: none;
-  background: transparent;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  font-size: 15px;
-}
-
-.nav-item:hover {
-  background: rgb(0 0 0 / 20%);
-  padding-left: 1.2rem;
-}
-
-.nav-item.active {
-  background: rgb(34 150 75 / 30%);
-  color: var(--white);
-  border-left: 3px solid var(--accent-green);
-  padding-left: 0.7rem;
-}
-
-/* ===== CONTENT AREA ===== */
+/* Content Area - These were accidentally removed */
 .content {
   flex: 1;
   padding: 2.4rem;
@@ -68,7 +11,6 @@
   overflow-y: auto;
 }
 
-/* Header */
 .content-header {
   display: flex;
   align-items: center;
@@ -85,67 +27,92 @@
   color: var(--text-dark);
 }
 
-/* Content Body */
 .content-body {
   padding: 0;
 }
 
-/* Uses shared global styles from `src/index.css` */
-
-.card{padding:2rem;margin-bottom:1.6rem;border-radius:10px}
-.card h1,.card h2,.card h3{font-size:20px;margin-bottom:1.2rem}
-
-/* Order Box */
-.order-box {
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.4rem;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
+/* Dashboard-specific card overrides */
+.card {
+  padding: 2rem;
+  margin-bottom: 1.6rem;
+  border-radius: 10px;
 }
 
-.order-box:hover {
-  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
-  border-color: var(--accent-green);
+.card h1,
+.card h2,
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 1.2rem;
 }
 
-/* Order Item */
-.order-item {
-  padding: 0.8rem 0;
-}
-
-.order-title {
-  margin-bottom: 0.6rem;
-  color: var(--text-dark);
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.order-note {
+/* Queue Info */
+.queue-info {
+  color: var(--text-light);
   font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.queue-info strong {
+  color: var(--accent-green);
+}
+
+/* Empty state */
+.empty-orders {
+  text-align: center;
+  padding: 2rem;
   color: var(--text-light);
 }
 
-/* ===== BUTTONS ===== */
-.btn {
-  padding: 0.7rem 1.4rem;
-  border-radius: 6px;
-  border: none;
-  color: var(--white);
+.empty-orders p {
+  margin: 0;
+}
+
+/* Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.order-number {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 13px;
+}
+
+.order-status {
+  font-size: 12px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 15px;
 }
 
-.btn-green {
-  background: var(--accent-green);
+.order-status.pending {
+  background: #fff3cd;
+  color: #856404;
 }
 
-.btn-green:hover {
-  background: #1a7a38;
-  transform: translateY(-2px);
+.order-status.processed {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* Order Subtotal */
+.order-subtotal {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.order-subtotal strong {
+  color: var(--accent-green);
+}
+
+/* Processed order box */
+.order-box.processed {
+  opacity: 0.7;
+  border-left: 3px solid var(--accent-green);
 }
 
 /* Logout Button */
@@ -168,70 +135,3 @@
   background: #444;
   transform: translateY(-2px);
 }
-
-/* ===== RESPONSIVE ===== */
-@media (width <= 768px) {
-  .app-shell {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav {
-    flex-direction: row;
-    gap: 0.4rem;
-  }
-
-  .nav-item {
-    padding: 0.6rem 1rem;
-    font-size: 14px;
-  }
-
-  .content {
-    padding: 1.6rem;
-  }
-
-  .content-header {
-    margin-bottom: 1.6rem;
-  }
-
-  .content-header h1 {
-    font-size: 24px;
-  }
-
-  .card {
-    padding: 1.4rem;
-  }
-
-  .order-box {
-    padding: 1rem;
-  }
-}
-
-@media (width <= 480px) {
-  .sidebar {
-    flex-direction: column;
-  }
-
-  .nav {
-    width: 100%;
-    flex-direction: column;
-    gap: 0.4rem;
-    margin-top: 1rem;
-  }
-
-  .content {
-    padding: 1rem;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-}
-

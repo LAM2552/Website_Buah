@@ -1,26 +1,20 @@
 /* ============================================
    REGISTER PAGE STYLING
+   Only page-specific styles, global styles in index.css
    ============================================ */
 
-/* Page-specific variables and resets moved to `src/index.css` */
-
-/* --------------------------------------------
-   3. LAYOUT & CONTAINER
-   -------------------------------------------- */
-.center-wrap {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+/* Page-specific card sizing */
+.card {
+  width: 100%;
+  max-width: 760px;
+  padding: 2.6rem 3rem
 }
 
-/* Uses shared global styles from `src/index.css` */
-
-.card{width:100%;max-width:760px;padding:2.6rem 3rem}
-.card h1{font-size:30px;margin-bottom:1.2rem;text-align:center}
-
-/* FORM WRAPPER moved to global styles in `src/index.css` to ensure consistent form layout across pages */
+.card h1 {
+  font-size: 30px;
+  margin-bottom: 1.2rem;
+  text-align: center
+}
 
 /* Make submit button occupy input column */
 .form-grid .form-actions {
@@ -28,65 +22,7 @@
   margin-top: 0.6rem;
 }
 
-/* Fallback stacked layout on small screens (kept here to allow page-specific overrides) */
-@media (width <= 640px) {
-  .form-grid .form-actions { grid-column: 1 / -1; }
-} 
-
-/* --------------------------------------------
-   5. FORM ELEMENTS
-   -------------------------------------------- */
-
-/* Page uses `.form-grid` for layout; inputs use base browser styles with focus state handled globally. */
-
-/* --------------------------------------------
-   6. BUTTONS
-   -------------------------------------------- */
-.btn {
-  display: inline-block;
-  width: 100%;
-  padding: 0.9rem 1.6rem;
-  margin-top: 1.6rem;
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Actions inside form (ke kanan kolom input) */
-.form-actions {
-  margin-top: 1.4rem;
-}
-
-.form-actions .btn {
-  width: 100%;
-  padding: 0.95rem 1.2rem;
-  border-radius: var(--radius-md);
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.btn-green {
-  background: var(--accent-green);
-  color: var(--white);
-}
-
-.btn-green:hover {
-  background: var(--accent-green-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.btn-green:active {
-  transform: translateY(0);
-}
-
-/* --------------------------------------------
-   7. UTILITIES (Alerts, Errors)
-   -------------------------------------------- */
+/* Form error message */
 .form-error {
   background: #fee;
   color: #c33;
@@ -97,16 +33,10 @@
   font-size: 14px;
 }
 
-/* --------------------------------------------
-   8. ANIMATIONS
-   -------------------------------------------- */
-
-/* --------------------------------------------
-   9. MEDIA QUERIES (Mobile)
-   -------------------------------------------- */
-@media (width <= 640px) {
-  .center-wrap {
-    padding: 1rem;
+/* Mobile adjustments */
+@media (width <=640px) {
+  .form-grid .form-actions {
+    grid-column: 1 / -1;
   }
 
   .card {
@@ -117,9 +47,4 @@
     font-size: 24px;
     margin-bottom: 1.2rem;
   }
-
-  /* Mobile fallback: form layout handled by `.form-grid` */
-  .form-grid .form-actions { grid-column: 1 / -1; }
-
-  .btn { padding: 0.8rem 1.4rem; }
 }

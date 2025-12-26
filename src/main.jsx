@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import { FruitQueueProvider } from './context/FruitQueueContext'
 import { OrderQueueProvider } from './context/OrderQueueContext'
+import { ShoppingProvider } from './context/ShoppingContext'
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <FruitQueueProvider>
       <OrderQueueProvider>
-        <App />
+        <ShoppingProvider>
+          <App />
+        </ShoppingProvider>
       </OrderQueueProvider>
     </FruitQueueProvider>
   </React.StrictMode>
