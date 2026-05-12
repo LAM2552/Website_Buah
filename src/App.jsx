@@ -5,6 +5,10 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
+import DaftarBuah from './pages/DaftarBuah'
+import DaftarPesanan from './pages/DaftarPesanan'
+import Belanja from './pages/Belanja'
+import StokBuah from './pages/StokBuah'
 
 export default function App() {
   return (
@@ -16,8 +20,10 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/daftarBuah" element={<Daftarbuah />} />
+        <Route path="/daftar-buah" element={<DaftarBuah />} />
+        <Route path="/daftar-pesanan" element={<DaftarPesanan />} />
+        <Route path="/belanja" element={<Belanja />} />
+        <Route path="/stok-buah" element={<StokBuah />} />
 
       </Routes>
     </BrowserRouter>
