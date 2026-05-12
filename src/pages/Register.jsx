@@ -3,25 +3,25 @@ import { useNavigate } from 'react-router-dom'
 import { findUser, addUser, setCurrentUser } from '../lib/auth'
 import './Register.css'
 
-export default function Register(){
+export default function Register() {
   const nav = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [error, setError] = useState('')
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault()
     setError('')
-    if(!username || !password){
+    if (!username || !password) {
       setError('Username dan password wajib diisi')
       return
     }
-    if(password !== confirm){
+    if (password !== confirm) {
       setError('Password dan konfirmasi tidak cocok')
       return
     }
-    if(findUser(username)){
+    if (findUser(username)) {
       setError('Username sudah terdaftar')
       return
     }

@@ -9,15 +9,15 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault()
     setError('')
     const user = findUser(username)
-    if(!user){
+    if (!user) {
       setError('Akun tidak ditemukan. Silakan registrasi dulu.')
       return
     }
-    if(user.password !== password){
+    if (user.password !== password) {
       setError('Password salah')
       return
     }

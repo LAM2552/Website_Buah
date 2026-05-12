@@ -2,15 +2,50 @@
    HOME PAGE STYLING
    ============================================ */
 
-/* Page-specific vars & tweaks removed — uses shared vars in `src/index.css` */
-
-/* Body and base resets are handled globally in `src/index.css` */
-
-/* This page uses shared global styles from `src/index.css` */
-
 /* Page-specific tweaks */
-.card{width:620px;padding:2.4rem 2.8rem;text-align:center}
-.card h1{font-size:32px;font-weight:700;margin-bottom:.8rem}
-.welcome-actions{display:flex;gap:1.2rem;margin-top:2rem;justify-content:center}
+.card {
+   width: 620px;
+   padding: 2.4rem 2.8rem;
+   text-align: center;
+}
 
-@media (width <=640px){.card{width:100%;padding:1.8rem 1.4rem}.card h1{font-size:24px}.welcome-actions{flex-direction:column;gap:.8rem}}
+.card h1 {
+   font-size: 32px;
+   font-weight: 700;
+   margin-bottom: 0.8rem;
+}
+
+.welcome-actions {
+   display: flex;
+   gap: 1.2rem;
+   margin-top: 2rem;
+   justify-content: center;
+}
+
+/* Equal size buttons */
+.welcome-actions .btn {
+   min-width: 140px;
+   padding: 0.9rem 1.6rem;
+   font-size: 15px;
+   font-weight: 600;
+}
+
+@media (width <=640px) {
+   .card {
+      width: 100%;
+      padding: 1.8rem 1.4rem;
+   }
+
+   .card h1 {
+      font-size: 24px;
+   }
+
+   .welcome-actions {
+      flex-direction: column;
+      gap: 0.8rem;
+   }
+
+   .welcome-actions .btn {
+      width: 100%;
+   }
+}
